@@ -1,7 +1,7 @@
 const assert = require('assert');
 
 
-var findItemOver20 = function(overTwenty)
+var findItemsOver20 = function(overTwenty)
 {
   var over20 = [];
 
@@ -27,5 +27,5 @@ var itemList2 = [
   {name : 'Spice', price : 15},
   {name : 'Meat',  price : 28}];
 
-assert.deepEqual(findItemOver20(itemList), [ { name: 'pears', price: 37 }, { name: 'bananas', price: 27 } ]);
-assert.deepEqual(findItemOver20(itemList2), [ { name : 'Sugar', price: 25 }, { name : 'Meat',  price: 28 } ]);
+assert.deepEqual(findItemsOver20(itemList), [ { name: 'pears', price: 37 }, { name: 'bananas', price: 27 } ]);
+assert.deepEqual(findItemsOver20(itemList2), [ { name : 'Sugar', price: 25 }, { name : 'Meat',  price: 28 } ]);
