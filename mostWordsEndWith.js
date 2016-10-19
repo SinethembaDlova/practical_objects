@@ -5,6 +5,7 @@ var mostWordsEndWith = function(commonEnd)
   var splittedWords = commonEnd.split(' ');
   var letterMap = {};
   var highestNum = 0;
+  var dominantLetter;
 
   for( var i = 0; i < splittedWords.length; i++)
   {
@@ -17,21 +18,31 @@ var mostWordsEndWith = function(commonEnd)
 
     letterMap[storeLetters]++;
   }
+    //console.log(letterMap);
 
   for(var numLetter in letterMap)
   {
-    if(letterMap[i] > highestNum)
+    if(highestNum < letterMap[numLetter])
     {
-      highestNum = letterMap[i];
-      console.log(highestNum);
+      highestNum = letterMap[numLetter];
+      dominantLetter = numLetter;
+    }
+
+    if (splittedWords[i].endsWith(dominantLetter))
+    {
+     console.log(splittedWords[i]);
     }
   }
 
-  //console.log(letterMap);
-  return letterMap;
+
+
+
+
+  return {highestNum, dominantLetter};
     //console.log(storeLetters);
 
 }
 
-var sentence = 'Down by the river there is a man that quiver and shiver, but he needs to deliver a packet that he think is a big racket and a packet of gum.';
+var sentence = 'Down by the river there is a man that quiver and shiver , but he needs to deliver a packet that he think is a big racket and a packet of gum .';
 mostWordsEndWith(sentence);
+console.log(mostWordsEndWith(sentence));
